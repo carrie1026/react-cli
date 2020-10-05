@@ -4,19 +4,19 @@ const env = _localEnv || process.env.NODE_ENV;
 console.log('env is ', env)
 // 测试环境接口
 const devPort = {
-    BASE_URL_ZMLEARN: 'https://x-chat-test.zmlearn.com'
+    BASE_URL_ZMLEARN: ''
 }
 // fat环境接口
 const fatPort = {
-    BASE_URL_ZMLEARN: 'https://x-chat-test.zmlearn.com'
+    BASE_URL_ZMLEARN: ''
 }
 // uat环境接口
 const uatProt = {
-    BASE_URL_ZMLEARN: 'https://chat.uat.zmops.cc'
+    BASE_URL_ZMLEARN: ''
 }
 // 生产环境接口
 const proProt = {
-    BASE_URL_ZMLEARN: 'https://chat.zmlearn.com'
+    BASE_URL_ZMLEARN: ''
 }
 
 switch(env){

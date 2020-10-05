@@ -56,43 +56,17 @@ export function getClientVersion() {
 export const getEnv = () => {
     const host = window.location.host;
     switch (host) {
-        case 'chat.zmlearn.com':
+        case 'www.prod.com':
             return 'prod';
-        case 'chat.uat.zmops.cc':
+        case 'www.uat.com':
             return 'uat';
-        case 'x-chat-test.zmlearn.com':
-            return 'fat';
-        case 'x-chat-dev.zmlearn.com':
+        case 'www.test.com':
             return 'fat';
         default:
             return 'fat';
     }
 }
 
-// 作业根据questionType分类 - 单选/填空...
-export function sortByType(data) {
-    // 划分题型大类
-    const questionObj = {};
-    const questionList = [];
-    data.homeworkLessonQuestionDTOList && data.homeworkLessonQuestionDTOList.forEach((item) => {
-        questionObj[item.questionOutputDTO.questionType] = questionObj[item.questionOutputDTO.questionType] || [];
-        questionObj[item.questionOutputDTO.questionType].push(item);
-    });
-    const questions = Object.keys(questionObj);
-    questions.forEach(item => {
-        let score = 0;
-        questionObj[item].forEach(subItem => {
-            score += subItem.score;
-        });
-        questionList.push({
-            questionType: item,
-            totalScore: score,
-            size: questionObj[item].length,
-            questionList: questionObj[item]
-        });
-    });
-    return questionList;
-}
 
 export function toChinesNum(num) {
     const changeNum = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九']; //changeNum[0] = "零"
