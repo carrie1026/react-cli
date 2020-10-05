@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with react 16.x+ and webpack 4.x.
 
 ## Quick Start
 ```
