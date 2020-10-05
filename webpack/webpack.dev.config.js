@@ -8,7 +8,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 function resolve(relatedPath) {
     return path.join(__dirname, relatedPath)
   }
-const PORT = 8087
+const PORT = 8086
 const publicPath = '/';
 const webpackConfigDev = {
     mode:'development',
@@ -31,7 +31,7 @@ const webpackConfigDev = {
         new OpenBrowserPlugin({
             url: `http://localhost:${PORT}/index`,
         }),
-        new BundleAnalyzerPlugin({ analyzerPort: 3500 })
+        // new BundleAnalyzerPlugin({ analyzerPort: 3500 })
     ],
     devtool: 'source-map',
     devServer:{
